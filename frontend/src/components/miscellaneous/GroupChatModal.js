@@ -31,7 +31,7 @@ const GroupChatModal = ({ children }) => {
   const { user, chats, setChats } = ChatState();
 
   const handleGroup = (userToAdd) => {
-    if (selectedUsers.includes(userToAdd)) {
+    if (selectedUsers.find((u) => u._id === userToAdd._id)) {
       toast({
         title: "User already added",
         status: "warning",
@@ -58,8 +58,8 @@ const GroupChatModal = ({ children }) => {
           Authorization: `Bearer ${user.token}`,
         },
       };
-      const { data } = await axios.get(`/api/user?search=${search}`, config);
-      console.log(data);
+      const { data } = await axios.get(`/api/user?search=${query}`, config);
+
       setLoading(false);
       setSearchResult(data);
     } catch (error) {

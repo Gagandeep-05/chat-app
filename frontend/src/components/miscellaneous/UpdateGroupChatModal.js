@@ -46,8 +46,8 @@ const UpdateGroupChatModal = ({ fetchMessages, fetchAgain, setFetchAgain }) => {
           Authorization: `Bearer ${user.token}`,
         },
       };
-      const { data } = await axios.get(`/api/user?search=${search}`, config);
-      console.log(data);
+      const { data } = await axios.get(`/api/user?search=${query}`, config);
+
       setLoading(false);
       setSearchResult(data);
     } catch (error) {
@@ -82,7 +82,7 @@ const UpdateGroupChatModal = ({ fetchMessages, fetchAgain, setFetchAgain }) => {
         config
       );
 
-      console.log(data._id);
+
       // setSelectedChat("");
       setSelectedChat(data);
       setFetchAgain(!fetchAgain);

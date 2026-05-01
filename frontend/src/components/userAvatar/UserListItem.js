@@ -1,43 +1,59 @@
 import { Avatar } from "@chakra-ui/avatar";
-import { Box, Text } from "@chakra-ui/layout";
-import { ChatState } from "../../Context/ChatProvider";
 
-const UserListItem = ({ handleFunction }) => {
-  const { user } = ChatState();
-
+const UserListItem = ({ user, handleFunction }) => {
   return (
-    <Box
+    <div
       onClick={handleFunction}
-      cursor="pointer"
-      bg="#E8E8E8"
-      _hover={{
-        background: "#38B2AC",
-        color: "white",
+      style={{
+        display: "flex",
+        alignItems: "center",
+        gap: "12px",
+        padding: "10px 12px",
+        borderRadius: "12px",
+        cursor: "pointer",
+        transition: "all 0.15s",
+        marginBottom: "4px",
+        background: "rgba(255,255,255,0.03)",
+        border: "1px solid rgba(255,255,255,0.04)",
       }}
-      w="100%"
-      d="flex"
-      alignItems="center"
-      color="black"
-      px={3}
-      py={2}
-      mb={2}
-      borderRadius="lg"
+      onMouseOver={(e) => {
+        e.currentTarget.style.background = "rgba(124,58,237,0.12)";
+        e.currentTarget.style.borderColor = "rgba(124,58,237,0.2)";
+      }}
+      onMouseOut={(e) => {
+        e.currentTarget.style.background = "rgba(255,255,255,0.03)";
+        e.currentTarget.style.borderColor = "rgba(255,255,255,0.04)";
+      }}
     >
-      <Avatar
-        mr={2}
-        size="sm"
-        cursor="pointer"
-        name={user.name}
-        src={user.pic}
-      />
-      <Box>
-        <Text>{user.name}</Text>
-        <Text fontSize="xs">
-          <b>Email : </b>
+      <Avatar size="sm" name={user.name} src={user.pic} />
+      <div style={{ flex: 1, minWidth: 0 }}>
+        <div
+          style={{
+            fontSize: "14px",
+            fontWeight: "600",
+            color: "#e2e8f0",
+            fontFamily: "'Inter', sans-serif",
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+            whiteSpace: "nowrap",
+          }}
+        >
+          {user.name}
+        </div>
+        <div
+          style={{
+            fontSize: "12px",
+            color: "#64748b",
+            fontFamily: "'Inter', sans-serif",
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+            whiteSpace: "nowrap",
+          }}
+        >
           {user.email}
-        </Text>
-      </Box>
-    </Box>
+        </div>
+      </div>
+    </div>
   );
 };
 
