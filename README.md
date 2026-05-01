@@ -1,81 +1,67 @@
+# 💬 Talk-A-Tive — Real-Time Chat Application
 
-# Talk-A-Tive
+A full-stack real-time chat application built with the MERN stack and Socket.io.
 
-Talk-a-tive is a Full Stack Chatting App.
-Uses Socket.io for real time communication and stores user details in encrypted format in Mongo DB Database.
 ## Tech Stack
 
-**Client:** React JS
+| Layer | Technology |
+|-------|-----------|
+| **Frontend** | React.js, Chakra UI |
+| **Backend** | Node.js, Express.js |
+| **Database** | MongoDB (Atlas) |
+| **Real-Time** | Socket.io |
+| **Auth** | JWT + Bcrypt |
 
-**Server:** Node JS, Express JS
+## Features
 
-**Database:** Mongo DB
-  
-## Demo
+- 🔐 **User Authentication** — Register & login with JWT tokens
+- 💬 **Real-Time Messaging** — Instant message delivery via Socket.io
+- ⌨️ **Typing Indicators** — See when someone is typing
+- 👥 **Group Chats** — Create groups, add/remove members, rename
+- 🔍 **User Search** — Find people by name or email
+- 🔔 **Notifications** — Get notified of new messages
+- 👤 **User Profiles** — View profile with avatar (Cloudinary upload)
 
-[https://talk-a-tive.herokuapp.com/](https://talk-a-tive-7fgq.onrender.com)
-
-![](https://github.com/piyush-eon/mern-chat-app/blob/master/screenshots/group%20%2B%20notif.PNG)
 ## Run Locally
 
 Clone the project
 
 ```bash
-  git clone https://github.com/piyush-eon/mern-chat-app
-```
-
-Go to the project directory
-
-```bash
-  cd mern-chat-app
+git clone https://github.com/Gagandeep-05/chat-app.git
+cd chat-app
 ```
 
 Install dependencies
 
 ```bash
-  npm install
+npm install
+cd frontend && npm install && cd ..
 ```
+
+Create `backend/.env` file
+
+```env
+PORT=8000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
+NODE_ENV=development
+```
+
+Start the backend server
 
 ```bash
-  cd frontend/
-  npm install
+npm run server
 ```
 
-Start the server
+Start the frontend (in a new terminal)
 
 ```bash
-  npm run start
-```
-Start the Client
-
-```bash
-  //open now terminal
-  cd frontend
-  npm start
+cd frontend
+npm start
 ```
 
-  
-# Features
+The app will be running at `http://localhost:3000`
 
-### Authenticaton
-![](https://github.com/piyush-eon/mern-chat-app/blob/master/screenshots/login.PNG)
-![](https://github.com/piyush-eon/mern-chat-app/blob/master/screenshots/signup.PNG)
-### Real Time Chatting with Typing indicators
-![](https://github.com/piyush-eon/mern-chat-app/blob/master/screenshots/real-time.PNG)
-### One to One chat
-![](https://github.com/piyush-eon/mern-chat-app/blob/master/screenshots/mainscreen.PNG)
-### Search Users
-![](https://github.com/piyush-eon/mern-chat-app/blob/master/screenshots/search.PNG)
-### Create Group Chats
-![](https://github.com/piyush-eon/mern-chat-app/blob/master/screenshots/new%20grp.PNG)
-### Notifications 
-![](https://github.com/piyush-eon/mern-chat-app/blob/master/screenshots/group%20%2B%20notif.PNG)
-### Add or Remove users from group
-![](https://github.com/piyush-eon/mern-chat-app/blob/master/screenshots/add%20rem.PNG)
-### View Other user Profile
-![](https://github.com/piyush-eon/mern-chat-app/blob/master/screenshots/profile.PNG)
 ## Made By
 
-- [@Piyush-eon](https://github.com/piyush-eon)
-
-  
+- [@Gagandeep-05](https://github.com/Gagandeep-05)
